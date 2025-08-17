@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Do You Love Me?</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffe6e6;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #ff3366;
+    }
+
+    .buttons {
+      margin-top: 40px;
+      position: relative;
+      height: 200px;
+    }
+
+    button {
+      font-size: 1.2em;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #yesBtn {
+      background-color: #66ff99;
+      color: #000;
+    }
+
+    #noBtn {
+      background-color: #ff6666;
+      color: #fff;
+      position: absolute;
+    }
+
+    #message {
+      margin-top: 30px;
+      font-size: 1.5em;
+      color: #cc0000;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Do you really love me? ❤️</h1>
+
+  <div class="buttons">
+    <button id="yesBtn">Yes</button>
+    <button id="noBtn">No</button>
+  </div>
+
+  <div id="message">Did you really say no? 😢</div>
+
+  <script>
+    const noBtn = document.getElementById('noBtn');
+    const yesBtn = document.getElementById('yesBtn');
+    const message = document.getElementById('message');
+
+    noBtn.addEventListener('mouseover', () => {
+      const x = Math.floor(Math.random() * 300);
+      const y = Math.floor(Math.random() * 150);
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    });
+
+    yesBtn.addEventListener('click', () => {
+      message.textContent = "Aww! I love you too 💖";
+      message.style.display = 'block';
+    });
+
+    noBtn.addEventListener('click', () => {
+      message.textContent = "Did you really say no? 😢";
+      message.style.display = 'block';
+    });
+  </script>
+
+</body>
+</html>
